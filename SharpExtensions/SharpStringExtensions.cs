@@ -34,7 +34,12 @@ namespace SharpExtensions
         /// <returns></returns>
         public static string ReplaceLast(this string text, string target, string replaceWith)
         {
-            throw new NotImplementedException();
+            int pos = text.LastIndexOf(target);
+            if (pos < 0)
+            {
+                return text;
+            }
+            return text.Substring(0, pos) + replaceWith + text.Substring(pos + target.Length);
         }
     }
 }
