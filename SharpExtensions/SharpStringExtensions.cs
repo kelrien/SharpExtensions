@@ -41,5 +41,12 @@ namespace SharpExtensions
             }
             return text.Substring(0, pos) + replaceWith + text.Substring(pos + target.Length);
         }
+
+        //http://stackoverflow.com/questions/271398/what-are-your-favorite-extension-methods-for-c-codeplex-com-extensionoverflow
+        //http://lukencode.com/2010/08/18/c-string-extension-methods/
+        //http://blogs.msdn.com/b/bluecollar/archive/2010/10/25/c-extension-methods-syntactic-sugar-or-useful-tool.aspx
+        //http://www.elijahtaylor.com/Tutorials/August-2009/My-Favorite-String-Extension-Methods-in-C-.aspx
+        //http://www.dailycoding.com/posts/top_5_small_but_must_have_extension_methods.aspx
+        //"ToMarkdown"?
     }
 }
