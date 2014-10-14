@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SharpExtensions
@@ -42,11 +43,30 @@ namespace SharpExtensions
             return text.Substring(0, pos) + replaceWith + text.Substring(pos + target.Length);
         }
 
-        //http://stackoverflow.com/questions/271398/what-are-your-favorite-extension-methods-for-c-codeplex-com-extensionoverflow
-        //http://lukencode.com/2010/08/18/c-string-extension-methods/
-        //http://blogs.msdn.com/b/bluecollar/archive/2010/10/25/c-extension-methods-syntactic-sugar-or-useful-tool.aspx
-        //http://www.elijahtaylor.com/Tutorials/August-2009/My-Favorite-String-Extension-Methods-in-C-.aspx
-        //http://www.dailycoding.com/posts/top_5_small_but_must_have_extension_methods.aspx
-        //"ToMarkdown"?
+        //TODO COMMENTS
+        public static bool IsValidEmailAddress(this string text)
+        {
+            Regex rx = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+            return rx.IsMatch(text);
+        }
+
+        //TODO COMMENTS
+        public static bool IsValidUrl(this string text)
+        {
+            Regex rx = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
+            return rx.IsMatch(text);
+        }
+
+        //TODO EVERYTHING!
+        public static string Reverse(this string text)
+        {
+            throw new NotImplementedException();
+        }
+
+        //TODO COMMENTS
+        public static string Format(this string text, params object[] args)
+        {
+            return string.Format(text, args);
+        }
     }
 }
