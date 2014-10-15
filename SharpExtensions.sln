@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpExtensions", "SharpExtensions\SharpExtensions.csproj", "{BE56618F-1F47-40AF-949A-7E95B643D4BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{8D27BDD8-1363-4F5E-BE56-55C2DFB66659}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpExtensions.Tests", "Tests\SharpExtensions.Tests.csproj", "{8D27BDD8-1363-4F5E-BE56-55C2DFB66659}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
