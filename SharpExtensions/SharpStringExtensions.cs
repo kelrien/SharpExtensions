@@ -43,7 +43,11 @@ namespace SharpExtensions
             return text.Substring(0, pos) + replaceWith + text.Substring(pos + target.Length);
         }
 
-        //TODO COMMENTS
+        /// <summary>
+        /// Checks if a given string is a valid email address
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public static bool IsValidEmailAddress(this string text)
         {
             Regex rx = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
