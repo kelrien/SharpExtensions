@@ -10,12 +10,9 @@ namespace SharpExtensions
     {
 
         /// <summary>
-        /// Search for a value in a dictionary with a default value
+        /// Search for a value in a dictionary with a default value as fallback 
+        /// if the requested key is not in the dictionary
         /// </summary>
-        /// <param name="dict"></param>
-        /// <param name="key"></param>
-        /// <param name="defaultValue"></param>
-        /// <returns></returns>
         public static V Get<K,V>(this Dictionary<K,V> dict, K key, V defaultValue)
         {
             if (dict.ContainsKey(key))
