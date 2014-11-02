@@ -48,5 +48,23 @@ namespace SharpExtensions.Tests
             object[] parameters = {"one",3,"4"};
             Assert.AreEqual(toFormat.Format(parameters), String.Format(toFormat, parameters));
         }
+
+        [TestMethod]
+        public void Sha1TestSimple()
+        {
+            string clearText = "testString";
+            //sha-1 hash of "testString"
+            string hash = "956265657d0b637ef65b9b59f9f858eecf55ed6a";
+            Assert.AreEqual(clearText.GetSHA1String(), hash);
+        }
+
+        [TestMethod]
+        public void MD5TestSimple()
+        {
+            string clearText = "testString";
+            //md5 hash of "testString"
+            string hash = "536788f4dbdffeecfbb8f350a941eea3";
+            Assert.AreEqual(clearText.GetMD5String(), hash);
+        }
     }
 }

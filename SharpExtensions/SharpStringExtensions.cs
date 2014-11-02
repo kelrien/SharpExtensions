@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -67,6 +68,37 @@ namespace SharpExtensions
         public static string Format(this string text, params object[] args)
         {
             return string.Format(text, args);
+        }
+
+        public static string GetSHA1String(this string text)
+        {
+            //create new instance of md5
+            SHA1 sha1 = SHA1.Create();
+            //convert the input text to array of bytes
+            byte[] hashData = sha1.ComputeHash(Encoding.Default.GetBytes(text));
+            //loop for each byte and add it to StringBuilder
+            StringBuilder returnValue = new StringBuilder();
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                returnValue.Append(hashData[i].ToString("X2"));
+            }
+            return returnValue.ToString().ToLower();
+        }
+
+        public static string GetMD5String(this string text)
+        {
+            //create new instance of md5
+            MD5 md5 = MD5.Create();
+            //convert the input text to array of bytes
+            byte[] hashData = md5.ComputeHash(Encoding.Default.GetBytes(text));
+            //loop for each byte and add it to StringBuilder
+            StringBuilder returnValue = new StringBuilder();
+
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                returnValue.Append(hashData[i].ToString("X2"));
+            }
+            return returnValue.ToString().ToLower();
         }
     }
 }
